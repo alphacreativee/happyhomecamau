@@ -164,7 +164,6 @@ body,
 }
 @media (max-width: 991px) {
   .hero__image {
-    height: 540px !important;
     max-height: 100svh;
   }
 }
@@ -193,6 +192,11 @@ body,
   transform: translate(-50%, 0);
   left: 50%;
   text-align: center;
+}
+@media (max-width: 991px) {
+  .hero__content {
+    top: 170px;
+  }
 }
 .hero__content h2 {
   font-family: var(--font-heading);
@@ -369,6 +373,11 @@ body,
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
+}
+@media (max-width: 991px) {
+  #header .header-logo {
+    top: 24px;
+  }
 }
 #header .header-logo img {
   width: 100%;

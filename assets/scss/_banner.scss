@@ -41,7 +41,7 @@
     height: 100svh !important;
 
     @media (max-width: 991px) {
-      height: 540px !important;
+      // height: 540px !important;
       max-height: 100svh;
     }
 
@@ -76,6 +76,10 @@
     transform: translate(-50%, 0);
     left: 50%;
     text-align: center;
+
+    @media (max-width: 991px) {
+      top: 170px;
+    }
 
     h2 {
       font-family: var(--font-heading);

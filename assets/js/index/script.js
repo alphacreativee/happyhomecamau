@@ -14,53 +14,44 @@ gsap.ticker.lagSmoothing(0);
 function hero() {
   if ($("section.hero").length < 1) return;
 
-  $(".hero-slider").each(function () {
-    let $slider = $(this);
+  document.querySelectorAll(".swiper-hero").forEach((el) => {
+    const swiper = new Swiper(el, {
+      slidesPerView: 1,
+      watchSlidesProgress: true,
+      speed: 1500,
+      loop: true,
+      autoplay: {
+        delay: 3000
+      },
 
-    let $dataSpeed;
-    let $dataLoop = $slider.attr("data-loop");
-    let $dataAutoplay = $slider.data("autoplay")
-      ? { delay: $slider.data("autoplay") }
-      : $slider.data("autoplay");
-    if ($slider.is("[data-speed]")) {
-      $dataSpeed = $slider.data("speed");
-    } else {
-      $dataSpeed = 900; // by default
-    }
-
-    new Swiper($slider[0], {
-      direction: "vertical",
-      speed: $dataSpeed,
-      loop: $dataLoop,
-      autoplay: $dataAutoplay,
-      preloadImages: true,
-      parallax: true,
-      lazy: {
-        loadPrevNext: true
-      },
-      allowTouchMove: false,
-      simulateTouch: false,
-      mousewheel: false,
-      pagination: {
-        el: ".hero .swiper-pagination",
-        clickable: false,
-        renderBullet: function (i, className) {
-          return `
-            <button class="${className}">
-            <svg class="progress" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle class="circle-origin" cx="14" cy="14" r="13" stroke="white"/>
-            </svg>
-            </button>`;
-        }
-      },
-      navigation: {
-        nextEl: ".hero .swiper-button-next",
-        prevEl: ".hero .swiper-button-prev"
-      },
       on: {
-        init: function () {
-          let $this = this;
-          $($this.slides[$this.activeIndex]);
+        progress(swiper) {
+          swiper.slides.forEach((slide) => {
+            const slideProgress = slide.progress || 0;
+            const innerOffset = swiper.width * 0.95;
+            const innerTranslate = slideProgress * innerOffset;
+
+            const slideInner = slide.querySelector(".hero-box");
+            if (slideInner && !isNaN(innerTranslate)) {
+              slideInner.style.transform = `translate3d(${innerTranslate}px, 0, 0)`;
+            }
+          });
+        },
+        touchStart(swiper) {
+          swiper.slides.forEach((slide) => {
+            slide.style.transition = "";
+          });
+        },
+        setTransition(swiper, speed) {
+          const easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+
+          swiper.slides.forEach((slide) => {
+            slide.style.transition = `${speed}ms ${easing}`;
+            const slideInner = slide.querySelector(".hero-box");
+            if (slideInner) {
+              slideInner.style.transition = `${speed}ms ${easing}`;
+            }
+          });
         }
       }
     });
