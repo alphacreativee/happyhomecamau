@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Happy Home Cà Mau</title>
     <!-- import favicon -->
-    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/images/favicon.svg" type="image/x-icon" />
     <!-- meta -->
     <meta property="og:url" content="" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="Happy Home Cà Mau" />
     <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="./assets/images/banner-3.webp" />
     <!-- meta -->
+    <link rel="stylesheet" href="./assets/fonts/Platypi/stylesheet.css" />
     <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/libs/lenis.css" />
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
-    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+    <link rel="stylesheet" href="./assets/main/css/style.css" />
     <!-- end link custom css page -->
     <!-- scrollRestoration -->
     <script>
@@ -85,7 +86,92 @@
     <header id="header"></header>
     <!-- end header -->
     <main>
-      <h1>helo</h1>
+      <section class="hero has-slider position-relative text-white">
+        <div
+          class="swiper hero-slider position-absolute top-0 start-0 w-100 h-100"
+          data-loop="true"
+          data-speed="2000"
+          data-autoplay="2500"
+        >
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide overflow-hidden">
+              <div
+                data-swiper-parallax-y="100%"
+                class="position-relative w-100 h-100 hero__image"
+              >
+                <picture>
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="./assets/images/banner-1.webp"
+                  />
+                  <img
+                    data-swiper-parallax-scale="1.35"
+                    class="w-100 h-100 object-fit-cover"
+                    src="./assets/images/banner-1.webp"
+                    alt="img_hero_1"
+                  />
+                </picture>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide overflow-hidden">
+              <div
+                data-swiper-parallax-y="100%"
+                class="position-relative w-100 h-100 hero__image"
+              >
+                <picture>
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="./assets/images/banner-2.webp"
+                  />
+                  <img
+                    data-swiper-parallax-scale="1.35"
+                    class="w-100 h-100 object-fit-cover"
+                    src="./assets/images/banner-2.webp"
+                    alt="img_hero_2"
+                  />
+                </picture>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide overflow-hidden">
+              <div
+                data-swiper-parallax-y="100%"
+                class="position-relative w-100 h-100 hero__image"
+              >
+                <picture>
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="./assets/images/banner-3.webp"
+                  />
+                  <img
+                    data-swiper-parallax-scale="1.35"
+                    class="w-100 h-100 object-fit-cover"
+                    src="./assets/images/banner-3.webp"
+                    alt="img_hero_3"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__content">
+          <h2 effect-title data-delay="0.2">
+            Định hình <br />
+            chuẩn mực sống mới <br />
+            tại Cà Mau
+          </h2>
+        </div>
+        <div class="hero__content--bottom">
+          <p effect-title data-delay="0.2">
+            Cùng chờ đón Khu Đô Thị Kiểu Mẫu <br />
+            Quy Mô Lớn Nhất Khu vực Tây Nam Bộ
+          </p>
+        </div>
+      </section>
     </main>
     <!-- layout -->
     <!-- footer -->
