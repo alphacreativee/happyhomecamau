@@ -370,13 +370,6 @@ body,
   left: 50%;
   transform: translateX(-50%);
 }
-@media (max-width: 991px) {
-  #header .header-logo {
-    width: 120px;
-    height: auto;
-    top: 24px;
-  }
-}
 #header .header-logo img {
   width: 100%;
   height: auto;
